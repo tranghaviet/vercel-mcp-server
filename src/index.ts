@@ -3,9 +3,6 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { ToolManager } from "./tool-manager.js";
 import { registerResources } from "./resources.js";
 
-export const BASE_URL = "https://api.vercel.com";
-export const DEFAULT_ACCESS_TOKEN = "Your_Access_Token"; // Replace with your actual token
-
 // Utility function to handle responses
 export async function handleResponse(response: Response): Promise<any> {
   if (!response.ok) {

@@ -39,37 +39,30 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/Quegenx/vercel-mcp-server.git
+git clone https://github.com/tranghaviet/vercel-mcp-server
 cd vercel-mcp-server
 
 # Install dependencies
 npm install
-
-# Build the project
-npm run build
 ```
 
 ### ⚙️ Configuration
 
-1. Install dependencies and build the project:
+1. Set up your Vercel access token:
+   - Go to https://vercel.com/account/tokens to generate your access token
+   - Update the token in both of these files:
+
+     Optional: In `src/config/constants.ts`:
+     ```typescript
+     export const DEFAULT_ACCESS_TOKEN = "YOUR_ACCESS_TOKEN"; // Replace with your actual token
+     ```
+
+2. Build the project:
    ```bash
    npm install
    npm run build
+   DEFAULT_ACCESS_TOKEN="your token" npm run start
    ```
-
-2. Set up your Vercel access token:
-   - Go to https://vercel.com/account/tokens to generate your access token
-   - Update the token in both of these files:
-     
-     In `src/config/constants.ts`:
-     ```typescript
-     export const DEFAULT_ACCESS_TOKEN = "YOUR_ACCESS_TOKEN"; // Replace with your actual token
-     ```
-     
-     In `src/index.ts`:
-     ```typescript
-     export const DEFAULT_ACCESS_TOKEN = "YOUR_ACCESS_TOKEN"; // Replace with your actual token
-     ```
 
 3. In Cursor's MCP settings, add the server with this command:
 
@@ -77,10 +70,10 @@ npm run build
    ```bash
    # Default installation
    /usr/local/bin/node /path/to/vercel-mcp/dist/index.js
-   
+
    # Homebrew installation
    /opt/homebrew/bin/node /path/to/vercel-mcp/dist/index.js
-   
+
    # NVM installation
    ~/.nvm/versions/node/v18.x.x/bin/node /path/to/vercel-mcp/dist/index.js
    ```
@@ -89,10 +82,10 @@ npm run build
    ```bash
    # Default installation
    C:\Program Files\nodejs\node.exe C:\path\to\vercel-mcp\dist\index.js
-   
+
    # NVM for Windows
    C:\nvm4w\nodejs\node.exe C:\path\to\vercel-mcp\dist\index.js
-   
+
    # Scoop installation
    C:\Users\username\scoop\apps\nodejs\current\node.exe C:\path\to\vercel-mcp\dist\index.js
    ```
@@ -101,7 +94,7 @@ npm run build
    ```bash
    # Default installation
    /usr/bin/node /path/to/vercel-mcp/dist/index.js
-   
+
    # NVM installation
    ~/.nvm/versions/node/v18.x.x/bin/node /path/to/vercel-mcp/dist/index.js
    ```
